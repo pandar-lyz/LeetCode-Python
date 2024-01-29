@@ -8,7 +8,7 @@ class Solution(object):
         left = 0
         right = len(nums) - 1
         while left <= right:
-            mid = (left + right) // 2
+            mid = left + (right - left) // 2  # 防止溢出
             if nums[mid] > target:
                 right = mid - 1
             elif nums[mid] < target:
@@ -20,3 +20,8 @@ class Solution(object):
 
 solution = Solution()
 print(solution.search([-1, 0, 3, 5, 9, 12], 9))
+res = [[0] * 3] * 3
+res[0][2] = 2
+
+print(res)
+print(3 // 2)
